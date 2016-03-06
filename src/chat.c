@@ -885,6 +885,8 @@ static void chat_onKey(ToxWindow *self, Tox *m, wint_t key, bool ltr)
     ChatContext *ctx = self->chatwin;
     StatusBar *statusbar = self->stb;
 
+    line_info_add(self, NULL, NULL, NULL, SYS_MSG, 0, 0, "%i", key);
+
     int x, y, y2, x2;
     getyx(self->window, y, x);
     getmaxyx(self->window, y2, x2);
